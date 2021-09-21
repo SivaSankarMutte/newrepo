@@ -1,0 +1,23 @@
+{% extends 'ht1/base.html' %}
+{% block title %}Adding Questions{% endblock %}
+{% block content %}
+{% load static %}
+<div class="container mt-5">
+	{% if messages %}
+	{% for m in messages %}
+	<div class="alert alert-{{m.tags}} alert-dismissible" id="dismiss">
+		<div>{{m}}</div>
+	  <a href="#" class="close" data-dismiss="alert" id="x" aria-label="close">&times;</a>
+	</div>
+	{% endfor %}
+	{% endif %}
+	<div class="jumbotron bg-warning">
+		<form enctype="multipart/form-data" method="post">
+			{% csrf_token %}
+			{{questionsform.as_table}}
+			<input type="submit" value="Add">
+		</form>
+	</div>
+	
+</div>
+{% endblock %}

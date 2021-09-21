@@ -1,0 +1,29 @@
+{% extends 'ht1/base.html' %}
+{% block title %}Home{% endblock %}
+{% block content %}
+{% load static %}
+
+<div class="container mt-5">
+	<div class="jumbotron m-5">
+		<form method="post">
+			{% csrf_token %}
+			{% for i in questions %}
+			<div class="jumbotron">
+				<h5>{{i.q1}}</h5>
+				<input type="radio" value="{{i.opt1}}" id="{{i.opt1}}" name="{{i.q1}}">
+				<label for="{{i.opt1}}">{{i.opt1}}</label><br>
+				<input type="radio" value="{{i.opt2}}" id="{{i.opt2}}" name="{{i.q1}}">
+				<label for="{{i.opt1}}">{{i.opt2}}</label><br>
+				<input type="radio" value="{{i.opt3}}" id="{{i.opt3}}" name="{{i.q1}}">
+				<label for="{{i.opt1}}">{{i.opt3}}</label><br>
+				<input type="radio" value="{{i.opt4}}" id="{{i.opt4}}" name="{{i.q1}}">
+				<label for="{{i.opt1}}">{{i.opt4}}</label><br>
+			</div>
+			{% endfor %}
+			<center>
+				<input type="submit" value="Submit" class="btn btn-primary">
+			</center>
+		</form>
+	</div>
+
+{% endblock %}
