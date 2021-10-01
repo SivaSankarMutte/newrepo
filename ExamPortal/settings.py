@@ -27,7 +27,7 @@ SECRET_KEY = '!_*r1(4(8v3-1_a+j5(j#k3k462anz+s*x9bseo)^99i@is35w'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://exambec.herokuapp.com/','localhost','127.0.0.1']
 
 AUTH_USER_MODEL = 'App1.User'
 # Application definition
